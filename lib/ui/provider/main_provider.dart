@@ -17,13 +17,13 @@ class MainProvider extends ChangeNotifier{
       "index": 1,
       'title': "appBarGroups".tr,
       'widget': const GroupsPage(),
-      'icon': const Icon(Icons.search),
+      'icon': const Icon(Icons.discount_rounded),
     },
     {
       "index": 2,
       'title': "appBarPaymart".tr,
       'widget': const PaymartPage(),
-      'icon': const Icon(Icons.heart_broken),
+      'icon': const Icon(Icons.payments_outlined),
     },
     {
       "index": 3,

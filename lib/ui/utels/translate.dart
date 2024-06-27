@@ -5,16 +5,14 @@ class Messeges extends Translations {
   // TODO: implement keys
   Map<String, Map<String, String>> get keys => {
      'uz_UZ':{
-       'appBarHome':'Bosh sahifa',
-       'appBarGroups':'Guruhlar',
-       'appBarPaymart':'To\'lovlar',
+       'changeLanguage':'Tilni o\'zgartirish',
+       'chiqish':'Chiqish',
        'appBarProfel':'Profel',
      },
      'ru_RU':{
-       'appBarHome':'Bosh ru',
-       'appBarGroups':'Guruhlar ru',
-       'appBarPaymart':'To\'lovlar ru',
-       'appBarProfel':'Profel ru',
+       'changeLanguage':'Изменить язык',
+       'chiqish': 'Выход',
+       'appBarProfel':'Профиль',
      },
   };
 
