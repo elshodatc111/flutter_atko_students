@@ -3,30 +3,31 @@ import 'package:atko_studens/ui/home/home_page.dart';
 import 'package:atko_studens/ui/paymart/paymart_page.dart';
 import 'package:atko_studens/ui/profel/profel_page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class MainProvider extends ChangeNotifier{
   List<Map<String, dynamic>> views = [
     {
       "index": 0,
-      'title': "Bosh sahifa",
+      'title': "appBarHome".tr,
       'widget': const HomePage(),
       'icon': const Icon(Icons.home),
     },
     {
       "index": 1,
-      'title': "Guruhlar",
+      'title': "appBarGroups".tr,
       'widget': const GroupsPage(),
       'icon': const Icon(Icons.search),
     },
     {
       "index": 2,
-      'title': "To'lovlar",
+      'title': "appBarPaymart".tr,
       'widget': const PaymartPage(),
       'icon': const Icon(Icons.heart_broken),
     },
     {
       "index": 3,
-      'title': "Profel",
+      'title': "appBarProfel".tr,
       'widget': const ProfelPage(),
       'icon': const Icon(Icons.person),
     }
