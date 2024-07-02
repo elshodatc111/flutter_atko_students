@@ -9,25 +9,25 @@ class MainProvider extends ChangeNotifier{
   List<Map<String, dynamic>> views = [
     {
       "index": 0,
-      'title': "appBarHome".tr,
+      'title': "Bosh sahifa",
       'widget': const HomePage(),
       'icon': const Icon(Icons.home),
     },
     {
       "index": 1,
-      'title': "appBarGroups".tr,
+      'title': "Guruhlar",
       'widget': const GroupsPage(),
       'icon': const Icon(Icons.discount_rounded),
     },
     {
       "index": 2,
-      'title': "appBarPaymart".tr,
+      'title': "To'lovlar",
       'widget': const PaymartPage(),
       'icon': const Icon(Icons.payments_outlined),
     },
     {
       "index": 3,
-      'title': "appBarProfel".tr,
+      'title': "Profel",
       'widget': const ProfelPage(),
       'icon': const Icon(Icons.person),
     }

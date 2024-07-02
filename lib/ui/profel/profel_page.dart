@@ -1,6 +1,8 @@
 import 'package:atko_studens/ui/auth/login_page.dart';
+import 'package:atko_studens/ui/splash/splash_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hive/hive.dart';
 
 class ProfelPage extends StatelessWidget {
   const ProfelPage({super.key});
@@ -65,7 +67,10 @@ class ProfelPage extends StatelessWidget {
           ),
           TextButton(
             onPressed: () {
-              Get.to(() => LoginPage());
+              var auth = Hive.box('auth');
+              print(auth.get('token'));
+              auth.put('token', '');
+              Get.to(() => SplashPage());
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
