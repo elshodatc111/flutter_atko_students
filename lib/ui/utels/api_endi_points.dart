@@ -4,4 +4,5 @@ class ApiEndiPoints{
 }
 class _ApiEndiPoints{
   final String loginEmail = 'login';
+  final String profelUrl = 'profel';
 }

@@ -11,6 +11,8 @@ import 'package:http/http.dart' as http;
 class AddTokenProvider extends ChangeNotifier{
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
+  bool _isLoading = false;
+  String _errorMessage = '';
   var headers = {'Content-Type':'application/json'};
   var url = Uri.parse(ApiEndiPoints.baseUrl+ApiEndiPoints.authEndpints.loginEmail);
 
@@ -21,6 +23,7 @@ class AddTokenProvider extends ChangeNotifier{
   void AddNewToken() async{
     var email = emailController.text;
     var password = passwordController.text;
+    _isLoading = true;
     if(email.isEmpty || password.isEmpty){
       print('Email or password isEmpty');
       return;
@@ -29,17 +32,29 @@ class AddTokenProvider extends ChangeNotifier{
       'email':email.trim(),
       'password':password
     };
-    http.Response response = await http.post(url, body:jsonEncode(body), headers:headers);
-    if(response.statusCode==200){
-      final json = jsonDecode(response.body);
-      var auth = Hive.box('auth');
-      auth.put('token', json['token']);
-      emailController.clear();
-      passwordController.clear();
-      notifyListeners();
-      Get.to(()=>SplashPage());
-    }else{
-      print(response.statusCode);
+
+    try {
+
+      http.Response response = await http.post(
+          url, body: jsonEncode(body), headers: headers);
+      if (response.statusCode == 200) {
+        final json = jsonDecode(response.body);
+        var auth = Hive.box('auth');
+        auth.put('token', json['token']);
+        emailController.clear();
+        passwordController.clear();
+        notifyListeners();
+
+        print(json['token']);
+
+
+        //Get.to(() => SplashPage());
+      } else {
+        print(response.statusCode);
+      }
+    }catch(e){
+      _errorMessage = e.toString();
     }
   }
+
 }
